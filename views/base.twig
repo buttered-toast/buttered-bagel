@@ -1,0 +1,52 @@
+<!doctype html>
+<html {{ fn('language_attributes') }}>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="data:,">
+        {{ fn('wp_head') }}
+    </head>
+    <body {{ fn('body_class') }}>
+        {% do action('wp_body_open') %}
+
+        {% block before_main_site_header %}{% endblock before_main_site_header %}
+
+        {% block main_site_header %}
+            <header id="main-site-header">
+                {% block main_site_header_content %}
+                    {% include 'components/nav-links.twig' with {items: global.menus.header.get_items} %}
+                {% endblock main_site_header_content %}
+            </header>
+        {% endblock main_site_header %}
+
+        {% block after_main_site_header %}{% endblock after_main_site_header %}
+
+        {% block before_main_content %}{% endblock before_main_content %}
+
+        {% block main_content %}
+            <main id="main-content">
+                {% block main_content_content %}
+                    {% for post in posts %}
+                        {{ post.content }}
+                    {% endfor %}
+                {% endblock main_content_content %}
+            </main>
+        {% endblock main_content %}
+
+        {% block after_main_content %}{% endblock after_main_content %}
+
+        {% block before_main_site_footer %}{% endblock before_main_site_footer %}
+
+        {% block main_site_footer %}
+            <footer id="main-site-footer">
+                {% block main_site_footer_content %}
+                    {% include 'components/nav-links.twig' with {items: global.menus.footer.get_items} %}
+                {% endblock main_site_footer_content %}
+            </footer>
+        {% endblock main_site_footer %}
+
+        {% block after_main_site_footer %}{% endblock after_main_site_footer %}
+
+        {{ fn('wp_footer') }}
+    </body>
+</html>

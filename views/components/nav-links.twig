@@ -1,0 +1,7 @@
+{% if items %}
+    <ul class="{{ item.children ? 'sub-' : '' }}menu">
+        {% for item in items %}
+            {% include 'components/component/nav-link.twig' %}
+        {% endfor %}
+    </ul>
+{% endif %}

@@ -1,0 +1,6 @@
+<li class="{{ item.classes|join(' ') }}">
+    <a target="{{ item.target ? item.target : '_self' }}" href="{{ item.link }}">{{ item.title }}</a>
+    {% if item.children %}
+        {% include 'components/nav-links.twig' with {items: item.children} %}
+    {% endif %}
+</li>

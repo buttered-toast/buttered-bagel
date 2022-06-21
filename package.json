@@ -1,0 +1,33 @@
+{
+    "name": "buba",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.php",
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-sync": "browser-sync start --http --proxy \"http://buba.lndo.site\" --files \"views, app, assets, core, tools\" --no-notify --no-inject-changes --no-open",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production"
+    },
+    "devDependencies": {
+        "@fullhuman/postcss-purgecss": "^4.1.3",
+        "autoprefixer": "^10.4.7",
+        "axios": "^0.26",
+        "browser-sync": "^2.27.10",
+        "browser-sync-webpack-plugin": "^2.3.0",
+        "jquery": "^3.6.0",
+        "laravel-mix": "^6.0.43",
+        "postcss": "^8.4.14",
+        "resolve-url-loader": "^5.0.0",
+        "sass": "^1.52.1",
+        "sass-loader": "^12.6.0",
+        "swiper": "^8.0.6",
+        "tailwindcss": "^3.0.24"
+    },
+    "author": "",
+    "license": "ISC"
+}
